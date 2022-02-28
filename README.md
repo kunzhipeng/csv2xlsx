@@ -25,4 +25,4 @@ Options:
 
 `pip install xlsxwriter`
 
-Windows下可用直接下载release里使用pyinstaller打包好的exe文件。将要转换的CSV文件拖拽到csv2xlsx.exe上即可自动完成转换。
+Windows下可用直接下载[release](https://github.com/kunzhipeng/csv2xlsx/releases)里使用pyinstaller打包好的exe文件。将要转换的CSV文件拖拽到csv2xlsx.exe上即可自动完成转换。
