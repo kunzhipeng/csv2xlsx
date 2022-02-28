@@ -1,7 +1,7 @@
 # csv2xlsx
-A file converter for CSV to XLSX, written in Python.
+A file converter for CSV to XLSX, written in Python. Support large CSV file more than million rows (Will be split into multiple XLSX file, each hold one million rows.)
 
-一个用Python实现的CSV格式转XLSX格式文件转换器。
+一个用Python实现的CSV格式转XLSX格式文件转换器。支持超过100万条记录的大型CSV文件（将输出多个XLSX文件，每个100万条）。
 
 We are a webscraping company since 2010 (you can learn more about us on our website http://www.site-digger.com). In our everyday work, we ofen convert the output CSV files into XlSX format for our clients, this process is cumbersome, so we create this script. Now we share this tool here to everyone who need it.
 
