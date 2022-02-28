@@ -27,7 +27,7 @@ def convert(csv_file, encoding='utf-8', max_rows=0):
             # 输出文件路径
             xlsx_file = csv_file[:-4] + '.xlsx'
             print('Convertting "{}" into "{}"...\n'.format(csv_file, xlsx_file))
-            print('The input file encoding is "{}", Will export {} rows.\n'.format(encoding, 'up to {}'.format(max_rows) if max_rows else 'ALL'))
+            print('The input file encoding is "{}", Will export {} rows.\n'.format(encoding, 'first {}'.format(max_rows) if max_rows else 'ALL'))
             
             header = None
             part = 1
