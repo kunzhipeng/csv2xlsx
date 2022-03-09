@@ -7,6 +7,7 @@ import sys
 import os
 import csv
 import re
+import glob
 import xlsxwriter
 from optparse import OptionParser
 
@@ -86,15 +87,14 @@ def convert(csv_file, encoding='utf-8', max_rows=0):
                     else:
                         break
             print('\n\nSaving data into "{}"...'.format(';'.join(output_files)))
-            print('\nOutfile is not ready, do not close this window.')
+            print('\nOutfile is not ready, please do not close this window.')
             workbook.close()
-            print('\nOutfile "{}" is ready. You can close this window now.'.format(';'.join(output_files)))
+            print('\nOutfile "{}" is ready.'.format(';'.join(output_files)))
         else:
             print('\nCSV file "{}" does not exist.'.format(csv_file))
     else:
         print('\nThe input file must be a .csv file.')
-    raw_input('\nPress ENTER to exit.')
-
+  
 
 if __name__ == '__main__':
     print('*' * 90)
@@ -113,4 +113,9 @@ if __name__ == '__main__':
         parser.print_help()
     else:
         csv_file = args[0]
-        convert(csv_file=csv_file, encoding=options.file_encoding, max_rows=options.max_rows)
+        # 支持通配符
+        for i, csv_file in enumerate(glob.glob(csv_file)):
+            if i > 0:
+                print('#' * 66)
+            convert(csv_file=csv_file, encoding=options.file_encoding, max_rows=options.max_rows)
+        raw_input('\nPress ENTER to exit.')
