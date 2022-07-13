@@ -17,12 +17,15 @@ We are a webscraping company since 2010 (you can learn more about us on our webs
 
 用法及命令行参数含义如下：
 ```
-Usage: csv2xlsx.py path-of-input-csv-file [-e <file_encoding>] [-n <max_rows_to_convert>]
+Usage: csv2xlsx.py path-of-input-csv-file [-e <file_encoding>] [-p <max_rows_allowed_per_outfile>] [-n <max_rows_to_convert>]
 
 Options:
   -h, --help            show this help message and exit
   -e FILE_ENCODING, --file_encoding=FILE_ENCODING
-                        The encoding of the input file.
+                        The encoding of the input file. Default is utf-8.
+  -p ROWS_PER_FILE, --rows_per_file=ROWS_PER_FILE
+                        The max rows allowed for per output XLSX file. If it
+                        exceeds, it will be split into multiple files.
   -n MAX_ROWS, --max_rows=MAX_ROWS
                         The max rows to convert.
 ```
